@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 링크 모음</title>
+    <title>Instagram으로 이동 중...</title>
     
-    <!-- Google Analytics (나중에 측정 ID로 교체) -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMEFRTJ5ZC"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -20,40 +20,68 @@
             text-align: center;
             padding: 50px;
             background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
+        .loading-container {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        .link-button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background: #E4405F;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #E4405F;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
         }
-        .link-button:hover {
-            background: #C13584;
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>내 SNS 링크</h1>
-        
-        <a href="https://instagram.com/ogq_official" 
-           class="link-button"
-           onclick="gtag('event', 'click', {'event_category': 'social', 'event_label': 'instagram'});">
-            📸 Instagram
-        </a>
+    <div class="loading-container">
+        <div class="spinner"></div>
+        <h1>Instagram으로 이동 중...</h1>
+        <p>잠시만 기다려주세요</p>
     </div>
+
+    <script>
+        // 페이지 방문 추적
+        gtag('event', 'page_view', {
+            'custom_parameter': 'ogq_redirect',
+            'event_category': 'redirect',
+            'event_label': 'instagram_redirect'
+        });
+        
+        // 0.5초 후 Instagram으로 자동 이동
+        setTimeout(function() {
+            // 클릭 이벤트도 추적
+            gtag('event', 'click', {
+                'event_category': 'outbound', 
+                'event_label': 'instagram_auto_redirect',
+                'transport_type': 'beacon'
+            });
+            
+            // Instagram으로 이동
+            window.location.href = "https://instagram.com/ogq_official";
+        }, 500);
+    </script>
 </body>
 </html>
