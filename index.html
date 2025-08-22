@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram으로 이동 중...</title>
+    <title>OGQ 이벤트 참여하러 중...</title>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMEFRTJ5ZC"></script>
@@ -13,13 +13,12 @@
         gtag('js', new Date());
         gtag('config', 'G-FMEFRTJ5ZC');
     </script>
-
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             text-align: center;
             padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: white;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,22 +29,26 @@
             background: white;
             padding: 50px 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             max-width: 400px;
             width: 90%;
+            border: 1px solid #e1e1e1;
         }
         .logo {
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            color: white;
-            font-weight: bold;
+            overflow: hidden;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
         }
         .spinner {
             border: 4px solid #f3f3f3;
@@ -93,15 +96,17 @@
 </head>
 <body>
     <div class="loading-container">
-        <div class="logo">📸</div>
-        <h1>Instagram으로 이동 중...</h1>
-        <p>OGQ에서 인스타그램으로 연결 중입니다</p>
+        <div class="logo">
+            <!-- 여기에 원하는 이미지 URL을 넣으세요 -->
+            <img src="https://file.notion.so/f/f/262dfd05-66bb-40d5-b6b3-34260ff4e4fe/06dda7c2-24a9-4576-9de5-2f8e3751ad25/%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8_1.png?table=block&id=25747f4b-dc66-80ea-a4cf-edf186c558f3&spaceId=262dfd05-66bb-40d5-b6b3-34260ff4e4fe&expirationTimestamp=1755849600000&signature=boMtXDhSxr2P7C5sUdQM784rnSX2PKLDuPt1qe4DPXk&downloadName=%E1%84%80%E1%85%B3%E1%84%85%E1%85%AE%E1%86%B8+1.png" alt="OGQ Logo">
+        </div>
+        <h1>이벤트 공지 보러 가는 중...</h1>
+        <p>지큐가 힘내서 가고 있어요!</p>
         <div class="progress-bar">
             <div class="progress-fill"></div>
         </div>
         <div class="spinner"></div>
     </div>
-
     <script>
         // 페이지 방문 추적
         gtag('event', 'page_view', {
